@@ -26,9 +26,12 @@ public class Menu {
 		System.out.println("0. Back to Main");
 		Scanner sc = new Scanner(System.in);
 		ret = sc.nextInt();
+		
 		if (ret > 0) {
 			subject[ret - 1] = true;
 			printResult(getSubjectName(ret));
+		} else if (ret == 0) {
+			//back to main
 		}
 	}
 	
@@ -54,9 +57,11 @@ public class Menu {
 	
 	public void printMyCourse() {
 		int cnt=1;
+		System.out.println("#My Course");
 		for (int i=0; i<subject.length; i++) {
 			if (subject[i]) {
 				System.out.println(cnt + ". " + getSubjectName(i+1));
+				//if subject is true, count number and get name
 				cnt++;
 			}
 		}

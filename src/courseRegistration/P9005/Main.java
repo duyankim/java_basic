@@ -13,9 +13,7 @@ public class Main {
 				menu.printCourseList();
 			} else if (m == 2) {
 				menu.printMyCourse();
-			} else if (m == 0) {
-				menu.printMainMenu();
-			}
+			} 
 		}
 	}
 }
