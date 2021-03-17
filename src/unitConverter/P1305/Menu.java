@@ -23,10 +23,12 @@ public class Menu {
 	public double convertToCm(int n) {
 		double ratio= unit[n-1];
 		return ratio;
+		// calculate ratio of input unit and cm
 	}
 	
 	public void printResult(double a, double b, int num) {
 		double result = b * a * num;
 		System.out.printf("%.1f", result);
+		// get result by multiply cm ratio
 	}
 }
