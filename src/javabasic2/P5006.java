@@ -1,7 +1,6 @@
 package javabasic2;
 
 import java.math.BigDecimal;
-import java.util.Arrays;
 
 public class P5006 {
 
@@ -44,7 +43,7 @@ public class P5006 {
 		}
 	}
 	
-	public static void getSubjectArr(int[] score, String[][] table, int i) {
+	public static void getSubjectArr(int[] score, String[][] table, int i) { //get index of table arrayS
 		int j;
 
 		for (j=0; j<score.length; j++) {
@@ -62,13 +61,12 @@ public class P5006 {
 	}
 	
 	public static void getAvg(int sum, int length) {
-		//double avg = Math.round((sum / length) * 100.0 )/ 100;
-		//System.out.println("Average: " + avg);
 		BigDecimal d1 = new BigDecimal(sum);
 		BigDecimal d2 = new BigDecimal(length);
 		BigDecimal avg = d1.divide(d2, 2, BigDecimal.ROUND_CEILING);
 		System.out.println("Average: " + avg);
-
+		// double avg is incorrect because of the divided decimal is too long
+		// BigDecimal can get big decimal numbers and round from 2 decimal places
 	}
 	
 	public static void getMax(int[] score) {
