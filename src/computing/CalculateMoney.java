@@ -10,7 +10,7 @@ public class CalculateMoney {
 		return totalOutput;
 	}
 	
-	public void exchangeToKRW(double notWonChange, double RATE) {
+	public void exchangeToKRW (double notWonChange, double RATE) {
 		int wonOutput;
 		wonOutput = (int)((notWonChange * RATE)/10)*10;
 		System.out.printf("거스름돈: %d원%n",wonOutput);
@@ -21,7 +21,7 @@ public class CalculateMoney {
 		System.out.println("----------------------");
 	}
 	
-	public void printUnitOutput(int[] unit, int money, String currency) {
+	public void printUnitOutput (int[] unit, int money, String currency) {
 		int i, amount=0;
 		System.out.print(currency + "환산: ");
 		
@@ -31,4 +31,6 @@ public class CalculateMoney {
 			money = money % unit[i];
 		}	
 	}
+	
+	
 }

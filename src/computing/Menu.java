@@ -21,7 +21,7 @@ public class Menu {
 	
 	public int inputMenu() {
 		int inputMenuType;
-		System.out.println("환전할 단위 : 1)USD	 2)EUR 3)JPY");
+		System.out.println("환전할 단위 : 1)USD	 2)EUR 3)JPY 0)Exit");
 		inputMenuType = sc.nextInt();
 		return inputMenuType;
 	}

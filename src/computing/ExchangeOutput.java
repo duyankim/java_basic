@@ -9,6 +9,7 @@ public class ExchangeOutput {
 		int[] dollarUnit = {100, 50, 20, 10, 5, 2, 1};
 		
 		//달러 환전
+		if()
 		totalOutput = money.exchangeOutput(inputKRW, ConstValueClass.USD_RATE, USD);
 
 		//달러 화폐
