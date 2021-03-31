@@ -1,4 +1,4 @@
-package computing;
+package Exchange0330;
 
 import java.util.Scanner;
 
@@ -37,7 +37,7 @@ public class Menu {
 			case ConstValueClass.CHANGE_TYPE_EUR:
 				runClass.exchangeToEUR(inputKRW);
 				break;
-			case ConstValueClass.CHANGE_TYPE_YAN:
+			case ConstValueClass.CHANGE_TYPE_JPY:
 				runClass.exchangeToJPY(inputKRW);
 				break;
 			default:

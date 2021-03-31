@@ -1,15 +1,18 @@
-package computing;
+package Exchange0330;
 
 public class CalculateMoney {
+	Balance balance = new Balance();
+	
 	public double exchangeOutput (int won, double RATE, String currency) {
-		int exchangeResult;
 		double totalOutput;
 		totalOutput = won / RATE;
-		exchangeResult = (int) totalOutput;
-		System.out.println("환전결과: " + exchangeResult + currency);
-		return totalOutput;
+		if (balance.checkBalance(totalOutput, currency) == true) {
+			return totalOutput;
+		} else {
+			return 0.0;
+		}
 	}
-	
+
 	public void exchangeToKRW(double notWonChange, double RATE) {
 		int wonOutput;
 		wonOutput = (int)((notWonChange * RATE)/10)*10;
@@ -31,4 +34,5 @@ public class CalculateMoney {
 			money = money % unit[i];
 		}	
 	}
+	
 }
