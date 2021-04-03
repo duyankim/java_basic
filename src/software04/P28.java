@@ -5,7 +5,7 @@ import java.text.DecimalFormat;
 public class P28 {
 
 	public static void main(String[] args) {
-		// 칸 맞춰 인쇄 2021-04-02 kopo03 김도연
+		// 칸 맞춰 인쇄 2021-04-02
 		
 		String item = "사과"; // string 변수 선언
 		int unit_price = 5000; // 단가
