@@ -1,23 +1,22 @@
-package software04;
+package software04.hong;
 
 public class P7 {
 
 	public static void main(String[] args) {
 		// for문 2021-04-02 kopo03 김도연
-		int sum=0; //총합 초기화
-		for (int i=0; i<10; i++) { //0부터 9까지 반복
-			sum = sum + i; //반복하면서 각 증가하는 i들의 총합을 구함
+		int k03_sum=0; //총합 초기화를 하며 선언하는 선언부이다.
+		for (int k03_i=0; k03_i<10; k03_i++) { //0부터 9까지 반복하기 위한 반복문이다.
+			k03_sum = k03_sum + k03_i; //반복하면서 각 증가하는 i들의 총합을 구한다.
 		}
-		System.out.printf("sum %d\n", sum); //총합 프린트
+		System.out.printf("sum %d\n", k03_sum); //총합 프린트하는 printf이다.
 		
-		for(int i=1; i<10; i++) {//1~9까지 반복
-			System.out.printf("************\n", i); //구분선
-			System.out.printf("  구구단 %d단\n",i); //구구단 n단 제목
-			System.out.printf("************\n", i); //구분선
-			for (int j=1; j<10; j++) { //곱해질 1부터 9까지의 수
-				System.out.printf(" %d * %d = %d \n", i, j, i*j); //구구단 계산
+		for(int k03_i=1; k03_i<10; k03_i++) {//1~9까지 반복하기 위한 반복문이다.
+			System.out.printf("************\n", k03_i); //구분선을 printf한다.
+			System.out.printf("  구구단 %d단\n",k03_i); //구구단 n단 제목을 printf한다.
+			System.out.printf("************\n", k03_i); //구분선을 printf한다.
+			for (int k03_j=1; k03_j<10; k03_j++) { //곱해질 1부터 9까지의 수를 반복문으로 나타낸다.
+				System.out.printf(" %d * %d = %d \n", k03_i, k03_j, k03_i*k03_j); //구구단 계산을 printf한다.
 			}
 		}
 	}
-
 }
