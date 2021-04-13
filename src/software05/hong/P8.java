@@ -55,9 +55,9 @@ public class P8 {
 		System.out.println("================================================");
 		System.out.printf("%s%35s\n", "[POS 1058231]", currentDate);
 		System.out.println("================================================");
-		System.out.printf("%-14.14s%10d%3d%9d\n[%s]\n", itemname1, price1, amount1, price1 * amount1, itemcode1);
-		System.out.printf("%-14.14s%12d%3d%9d\n[%s]\n", itemname2, price2, amount2, price2 * amount2, itemcode2);
-		System.out.printf("%-14.14s%10d%3d%9d\n[%s]\n", itemname3, price3, amount3, price3 * amount3, itemcode3);
+		System.out.printf("%-14.14s%10s%3d%9s\n[%s]\n", itemname1, df.format(price1), amount1, df.format(price1 * amount1), itemcode1);
+		System.out.printf("%-14.14s%12s%3d%9s\n[%s]\n", itemname2, df.format(price2), amount2, df.format(price2 * amount2), itemcode2);
+		System.out.printf("%-14.14s%10s%3d%9s\n[%s]\n", itemname3, df.format(price3), amount3, df.format(price3 * amount3), itemcode3);
 		System.out.printf("%18s%26s\n", "과세합계", df.format(priceBeforeTax));
 		System.out.printf("%19s%26s\n", "부가세", df.format(tax));
 		
@@ -73,7 +73,10 @@ public class P8 {
 		System.out.printf("%s : %s\n", "상품 및 기타 문의", "1522-4400");
 		System.out.printf("%s : %s\n", "멤버십 및 샵다이소 관련 문의", "1599-2211");
 
-
+		System.out.printf("%32s\n", "2112820610158231");
+		System.out.println("------------------------------------------------");
+		System.out.printf("%28s\n", "🞛 다이소 멤버십 앱 또는 홈페이지에 접속하셔서");
+		System.out.printf("%28s\n", "회원가입 후 다양한 혜택을 누려보세요! 🞛");
 	}
 
 }

@@ -1,4 +1,6 @@
-package Exchange0330;
+package exchange0330;
+
+import java.io.IOException;
 
 public class CalculateMoney {
 	Balance balance = new Balance();
@@ -13,26 +15,31 @@ public class CalculateMoney {
 		}
 	}
 
-	public void exchangeToKRW(double notWonChange, double RATE) {
+	public void exchangeToKRW(double notWonChange, double RATE) throws IOException {
 		int wonOutput;
 		wonOutput = (int)((notWonChange * RATE)/10)*10;
-		System.out.printf("거스름돈: %d원%n",wonOutput);
+		System.out.printf("거스름돈: \t%d원%n",wonOutput);
+		FileOutput.FileWrite(String.valueOf(wonOutput) + ",");
+		balance.writeBalance(RATE);
 		
 		int[] wonUnit = {1000, 500, 100, 10};
 		printUnitOutput(wonUnit, wonOutput, "원");
 		
-		System.out.println("----------------------");
+		System.out.println("===============================");
 	}
 	
 	public void printUnitOutput(int[] unit, int money, String currency) {
 		int i, amount=0;
-		System.out.print(currency + "환산: ");
+		System.out.println("===============================");
+		System.out.println(currency + "환산: ");
 		
 		for (i=0; i < unit.length; i++) {
 			amount = money / unit[i];
-			System.out.println("\t" + unit[i] + currency + "\t" + amount + "개");
+			if (amount != 0) {
+				System.out.println("\t" + unit[i] + currency + "\t" + amount + "개");
+			}
 			money = money % unit[i];
 		}	
 	}
-	
 }
+ 

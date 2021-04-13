@@ -1,4 +1,4 @@
-package Exchange0330;
+package exchange0330;
 
 public class ConstValueClass {
 	public static final double USD_RATE = 1134.30;
@@ -12,5 +12,8 @@ public class ConstValueClass {
 	public static double BALANCE_USD = 500;
 	public static double BALANCE_EUR = 500;
 	public static double BALANCE_JPY = 100;
-
+	
+	public static final String USD = "USD";
+	public static final String EUR = "EUR";
+	public static final String JPY = "JPY";
 }

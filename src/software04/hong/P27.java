@@ -24,4 +24,3 @@ public class P27 {
 	}
 
 }
-ㄴ
