@@ -1,6 +1,4 @@
-package exchange0330;
-
-import java.io.IOException;
+package Exchange0330;
 
 public class Balance {
 	public boolean checkBalance (double totalOutput, String currency) {
@@ -45,16 +43,5 @@ public class Balance {
 	public void printErrorMsg(String currency, double balance) {
 		System.out.println(currency + " 보유액이 부족합니다.");
 		System.out.println(currency + " 보유액 : " + (int) balance + " " + currency);
-	}
-	
-	public void writeBalance(double RATE) throws IOException {
-		if (RATE == ConstValueClass.USD_RATE) {
-			FileOutput.FileWrite(String.valueOf(ConstValueClass.BALANCE_USD));
-		} else if (RATE == ConstValueClass.EUR_RATE) {
-			FileOutput.FileWrite(String.valueOf(ConstValueClass.BALANCE_EUR));
-		} else {
-			FileOutput.FileWrite(String.valueOf(ConstValueClass.BALANCE_JPY));
-		}
-		FileOutput.FileWrite("\n");
 	}
 }

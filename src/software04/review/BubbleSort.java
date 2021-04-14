@@ -1,4 +1,3 @@
-package javaReview;
 
 public class BubbleSort {
 
