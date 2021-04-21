@@ -23,14 +23,42 @@ public class P9 {
 				true, true, true }; // 면세유무
 
 		int priceSum;
+		String store, address, pos, manager, customerName, cardName, payment, carNumber, casher;
+		pos = "POS:0011-9861";
+		store = "이마트 죽전점 (031)888-1234";
+		manager = "206-86-50913 강희석";
+		address = "용인 수지구 포은대로 552";
+		customerName = "곽두팔";
+		cardName = "0012 KEB 하나";
+		payment = "일시불";
+		carNumber = "12로9759";
+		casher = "084599 ";
+		
 		/* 영수증 출력 */
-		printTop();
+		printTop(store, manager, address, pos);
 		printList(itemName, count, price, taxfree);
-		priceSum = printPrice(count, price, taxfree, "일시불");
-		printPoint("곽두팔", 5473, priceSum);
-		printBottom();
+		priceSum = printPrice(count, price, taxfree, cardName, payment);
+		printPoint(customerName, 5473, priceSum);
+		printBottom(carNumber, casher);
 	}
 
+	public static void printTop(String store, String manager, String address, String pos) {
+		Calendar cal = Calendar.getInstance();
+		SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd HH:mm");
+		String currentDateMin = sdf.format(cal.getTime());
+		
+		System.out.printf("%18s%s\n", " ", store);
+		System.out.printf("%11s%7s%s\n", "emart", " ", manager);
+		System.out.printf("%18s%s\n", " ", address);
+
+		System.out.printf("%s\n", "영수증 미지참시 교환/환불 불가");
+		System.out.printf("%s\n", "정상상품에 한함, 30일 이내(신선 7일)");
+		System.out.printf("%s\n", "일부 브랜드매장 제외(매장 고지물참조)");
+		System.out.printf("%s\n", "교환/환불 구매점에서 가능(결제카드 지참)");
+		System.out.println();
+		System.out.printf("%s%s%23s\n", "[구 매]", currentDateMin, pos);
+	}
+	
 	public static void printList(String[] itemName, int[] count, int[] price, boolean[] taxfree) {
 		System.out.println("----------------------------------------------");
 		System.out.printf("%3s%-15.15s%6.6s%4.4s%8.8s\n", " ", "상 품 명", "단 가", "수량", "금 액");
@@ -63,7 +91,7 @@ public class P9 {
 		}
 	}
 	
-	public static int printPrice(int[] count, int[] price, boolean[] taxfree, String payment) {
+	public static int printPrice(int[] count, int[] price, boolean[] taxfree, String cardName, String payment) {
 		DecimalFormat df = new DecimalFormat("###,###,###,###,###");
 		
 		int taxfreeSum = 0, taxItemSum = 0, tax = 0, priceSum = 0, paymentPrice=0;
@@ -96,7 +124,7 @@ public class P9 {
 		System.out.printf("%15s%-11s%18s\n", " ", "합        계", df.format(priceSum));
 		System.out.printf("%s%29s\n", "결 제 대 상 금 액", df.format(priceSum));
 		System.out.println("----------------------------------------------");
-		System.out.printf("%s%33s\n", "0012 KEB 하나", "541707**0484/35860658");
+		System.out.printf("%s%33s\n", cardName, "541707**0484/35860658");
 		System.out.printf("%s%21s%s%7s\n", "카드결제(IC)", payment, " / ", df.format(paymentPrice));
 		System.out.println("----------------------------------------------");
 		return priceSum;
@@ -113,43 +141,30 @@ public class P9 {
 		point = (int)(priceSum / 1000);
 		newPoint = point + havePoint;
 		
-		System.out.printf("%27s\n", "[신세계포인트 적립]");
+		System.out.printf("%25s\n", "[신세계포인트 적립]");
 		System.out.printf("%s%s\n", name," 고객님의 포인트 현황입니다.");
 		System.out.printf("%s%22s%10s\n", "금회발생포인트", "9350**9995", df.format(point));
 		System.out.printf("%s%19s(%9s)\n", "누계(가용)포인트", df.format(newPoint), df.format(havePoint));
 		System.out.printf("%s\n", "*신세계포인트 유효기간은 2년입니다");
 	}
 
-	public static void printTop() {
-		Calendar cal = Calendar.getInstance();
-		SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd HH:mm");
-		String currentDateMin = sdf.format(cal.getTime());
-		
-		System.out.printf("%18s%s\n", " ", "이마트 죽전점 (031)888-1234");
-		System.out.printf("%18s%s\n", " ", "206-86-50913 강희석");
-		System.out.printf("%18s%s\n", " ", "용인 수지구 포은대로 552");
-
-		System.out.printf("%s\n", "영수증 미지참시 교환/환불 불가");
-		System.out.printf("%s\n", "정상상품에 한함, 30일 이내(신선 7일)");
-		System.out.printf("%s\n", "일부 브랜드매장 제외(매장 고지물참조)");
-		System.out.printf("%s\n", "교환/환불 구매점에서 가능(결제카드 지참)");
-		System.out.println();
-		System.out.printf("%s%s%23s\n", "[구 매]", currentDateMin, "POS:0011-9861");
-	}
 	
-	public static void printBottom() {
+	public static void printBottom(String carNum, String casher) {
 		Calendar cal = Calendar.getInstance();
 		SimpleDateFormat sds = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
 		String currentDateSecond = sds.format(cal.getTime());
 		SimpleDateFormat sdd = new SimpleDateFormat("YYYYMMdd");
 		String currentDate = sdd.format(cal.getTime());
 		
+		carNum = carNum.substring(0, carNum.length()-4) + "****";
+		casher = casher.substring(0, casher.length()-2) + "OO";
+		
 		System.out.println("----------------------------------------------");
 		System.out.printf("%10s\n", "구매금액기준 무료주차시간 자동부여");
-		System.out.printf("%s :%35s\n", "차량번호", "12로****");
+		System.out.printf("%s :%35s\n", "차량번호", carNum);
 		System.out.printf("%s :%36s\n", "입차시간", currentDateSecond);
 		System.out.println("----------------------------------------------");
-		System.out.printf("%s:%s%30s\n", "캐셔", "084599 양00", 1150);
+		System.out.printf("%s:%s%30s\n", "캐셔", casher , 1150);
 		System.out.printf("%s%s\n", currentDate, "/00119861/00164980/31");
 	}
 }
