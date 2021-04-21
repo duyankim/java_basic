@@ -10,34 +10,34 @@ public class P8 {
 	public static void main(String[] args) {
 		// 영수증 출력2 2021-04-12 kopo03 김도연
 
-		String itemname1 = "퓨어에어 비말차단용마스크(최고급형)";
-		String itemcode1 = "1031615";
-		int price1 = 3000;
-		int amount1 = 1;
+		String k03_itemname1 = "퓨어에어 비말차단용마스크(최고급형)"; 
+		String k03_itemcode1 = "1031615";
+		int k03_price1 = 3000;
+		int k03_amount1 = 1;
 
-		String itemname2 = "슬라이드식명찰(가로형)(100호)";
-		String itemcode2 = "11008152";
-		int price2 = 1000;
-		int amount2 = 1;
+		String k03_itemname2 = "슬라이드식명찰(가로형)(100호)";
+		String k03_itemcode2 = "11008152";
+		int k03_price2 = 1000;
+		int k03_amount2 = 1;
 
-		String itemname3 = "매직흡착 인테리어후크(알루미늄타입)";
-		String itemcode3 = "1020800";
-		int price3 = 1000;
-		int amount3 = 1;
+		String k03_itemname3 = "매직흡착 인테리어후크(알루미늄타입)";
+		String k03_itemcode3 = "1020800";
+		int k03_price3 = 1000;
+		int k03_amount3 = 1;
 		
-		double priceAll = price1 * amount1 + price2 * amount2 + price3 * amount3;
-		int tax = (int) Math.round(priceAll / 11);
-		int priceBeforeTax = (int)(priceAll - tax);
+		double k03_priceAll = k03_price1 * k03_amount1 + k03_price2 * k03_amount2 + k03_price3 * k03_amount3;
+		int k03_tax = (int) Math.round(k03_priceAll / 11);
+		int k03_priceBeforeTax = (int)(k03_priceAll - k03_tax);
 
-		DecimalFormat df = new DecimalFormat("###,###,###,###,###");
+		DecimalFormat k03_df = new DecimalFormat("###,###,###,###,###");
 
-		Calendar cal = Calendar.getInstance();
-		SimpleDateFormat sdf = new SimpleDateFormat("YYYY.MM.dd HH:mm:ss");
-		String currentDate = sdf.format(cal.getTime());
+		Calendar k03_cal = Calendar.getInstance();
+		SimpleDateFormat k03_sdf = new SimpleDateFormat("YYYY.MM.dd HH:mm:ss");
+		String k03_currentDate = k03_sdf.format(k03_cal.getTime());
 
-		cal.add(Calendar.DAY_OF_MONTH, 14);
+		k03_cal.add(Calendar.DAY_OF_MONTH, 14);
 		SimpleDateFormat monthAndDate = new SimpleDateFormat("MM월 dd일");
-		String twoWeeksLater = monthAndDate.format(cal.getTime());
+		String twoWeeksLater = monthAndDate.format(k03_cal.getTime());
 
 		System.out.printf("%26s\n", "\"국민가게, 다이소\"");
 		System.out.printf("%s\n", "(주)아성다이소_분당서현점");
@@ -53,23 +53,23 @@ public class P8 {
 		System.out.printf("%27s\n", "포장/가격 택 훼손시 교환/환불 불가");
 		System.out.printf("%27s\n", "체크카드 취소 시 최대 7일 소요");
 		System.out.println("================================================");
-		System.out.printf("%s%35s\n", "[POS 1058231]", currentDate);
+		System.out.printf("%s%35s\n", "[POS 1058231]", k03_currentDate);
 		System.out.println("================================================");
-		System.out.printf("%-14.14s%10s%3d%9s\n[%s]\n", itemname1, df.format(price1), amount1, df.format(price1 * amount1), itemcode1);
-		System.out.printf("%-14.14s%12s%3d%9s\n[%s]\n", itemname2, df.format(price2), amount2, df.format(price2 * amount2), itemcode2);
-		System.out.printf("%-14.14s%10s%3d%9s\n[%s]\n", itemname3, df.format(price3), amount3, df.format(price3 * amount3), itemcode3);
-		System.out.printf("%18s%26s\n", "과세합계", df.format(priceBeforeTax));
-		System.out.printf("%19s%26s\n", "부가세", df.format(tax));
+		System.out.printf("%-14.14s%10s%3d%9s\n[%s]\n", k03_itemname1, k03_df.format(k03_price1), k03_amount1, k03_df.format(k03_price1 * k03_amount1), k03_itemcode1);
+		System.out.printf("%-14.14s%12s%3d%9s\n[%s]\n", k03_itemname2, k03_df.format(k03_price2), k03_amount2, k03_df.format(k03_price2 * k03_amount2), k03_itemcode2);
+		System.out.printf("%-14.14s%10s%3d%9s\n[%s]\n", k03_itemname3, k03_df.format(k03_price3), k03_amount3, k03_df.format(k03_price3 * k03_amount3), k03_itemcode3);
+		System.out.printf("%18s%26s\n", "과세합계", k03_df.format(k03_priceBeforeTax));
+		System.out.printf("%19s%26s\n", "부가세", k03_df.format(k03_tax));
 		
 		System.out.println("------------------------------------------------");
-		System.out.printf("%-4s%40s\n", "판매합계", df.format(priceAll));
+		System.out.printf("%-4s%40s\n", "판매합계", k03_df.format(k03_priceAll));
 		System.out.println("================================================");
-		System.out.printf("%-4s%40s\n", "신용카드", df.format(priceAll));
+		System.out.printf("%-4s%40s\n", "신용카드", k03_df.format(k03_priceAll));
 		System.out.println("------------------------------------------------");
 		System.out.printf("%-4s%40s\n", "우리카드", "538720**********");
-		System.out.printf("%-4s %s%18s %s\n", "승인번호", "77982843(0)", "승인금액", df.format(priceAll));
+		System.out.printf("%-4s %s%18s %s\n", "승인번호", "77982843(0)", "승인금액", k03_df.format(k03_priceAll));
 		System.out.println("================================================");
-		System.out.printf("%28s %s\n", currentDate, "분당서현점");
+		System.out.printf("%28s %s\n", k03_currentDate, "분당서현점");
 		System.out.printf("%s : %s\n", "상품 및 기타 문의", "1522-4400");
 		System.out.printf("%s : %s\n", "멤버십 및 샵다이소 관련 문의", "1599-2211");
 

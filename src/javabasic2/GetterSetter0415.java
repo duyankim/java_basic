@@ -16,7 +16,7 @@ public class GetterSetter0415 {
 			info.setName("곽두팔" + i);
 			info.setId(123450 + i);
 			info.setBirth(210101 + i);
-			info.address = "크리스마스 섬";
+			info.address = "제주 서귀포시";
 			info.setScore(4.5);
 			info.bloodType = 'O';
 
@@ -28,5 +28,4 @@ public class GetterSetter0415 {
 					infoArray.get(j).getBirth());
 		}
 	}
-
 }
