@@ -1,4 +1,4 @@
-package sw06;
+package software06;
 
 public class Calc1 {
 	/* 메소드 오버로딩 2021-04-27 kopo03 김도연 */

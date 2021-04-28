@@ -1,4 +1,4 @@
-package sw06;
+package software06;
 
 public class ReportSheet {
 

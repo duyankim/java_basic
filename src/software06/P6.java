@@ -1,4 +1,4 @@
-package sw06;
+package software06;
 
 import java.io.UnsupportedEncodingException;
 import java.text.DecimalFormat;
