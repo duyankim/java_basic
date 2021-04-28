@@ -65,6 +65,7 @@ public class ReportSheet3 {
 	}
 	
 	public static void listPrint(InputData2 inData, int start, int lines) {	
+		inData.setSumAve(start, lines);
 		for (int k03_i = start; k03_i < lines; k03_i++) {														// 인원수만큼 배열을 돈다
 			System.out.printf(" %03d    %-5s%7d %7d %7d %7d %7.1f\n", 								// 만든 데이터를 프린트함
 					k03_i+1, 
